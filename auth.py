@@ -30,3 +30,7 @@ def generate_session_id():
 
 # Hardcoded secret pattern (intentionally fake for testing)
 DB_PASSWORD = "password123_not_real"
+
+# Trigger fresh action run
+import hashlib
+weak_hash = hashlib.md5(b"trigger").hexdigest()
