@@ -22,3 +22,18 @@ def verify_signature(data: bytes, key: bytes) -> str:
 
 # Hardcoded API token — should trigger secret detection
 API_TOKEN = "ghp_1234567890abcdefABCDEF1234567890abcd"
+
+# More weak crypto added in PR
+import random
+def generate_session_id():
+    return ''.join(str(random.random()) for _ in range(5))
+
+# Hardcoded secret pattern (intentionally fake for testing)
+DB_PASSWORD = "password123_not_real"
+
+# Trigger fresh action run
+import hashlib
+weak_hash = hashlib.md5(b"trigger").hexdigest()
+# trigger
+# trigger diff test
+# trigger safe.directory fix
