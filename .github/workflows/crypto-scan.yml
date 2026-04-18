@@ -1,0 +1,11 @@
+name: Crypto Scan
+on: [pull_request]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Plothner/firewall-action@v1
+        with:
+          backend_url: https://qryptera-api.plothner.com
+          github_token: ${{ secrets.GITHUB_TOKEN }}
