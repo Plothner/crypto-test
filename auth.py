@@ -36,3 +36,4 @@ import hashlib
 weak_hash = hashlib.md5(b"trigger").hexdigest()
 # trigger
 # trigger diff test
+# trigger safe.directory fix
